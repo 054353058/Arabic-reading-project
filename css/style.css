@@ -1,0 +1,634 @@
+:root {
+    --text-color: dodgerblue;
+    --back-color: #fafafa;
+    --black-color: #333;
+}
+html {
+    direction: rtl;
+}
+body {
+    font-family: 'Rubik', sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+}
+
+.main-content {
+    padding: 50px 40px;
+}
+.main-title {
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+    position: relative;
+    width: fit-content;
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+.main-title::after {
+    content: '';
+    width: 60%;
+    height: 2px;
+    background-color: var(--text-color);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--black-color)
+}
+
+.msg {
+    padding: 15px;
+    border-radius: 5px;
+    padding-left: 10px;
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    color: #eee;
+    min-width: 200px;
+    z-index: 10000;
+    font-size: 18px;
+    font-weight: bold;
+    display: none;
+}
+.msg i {
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 20px;
+    transition: .3s;
+
+}
+.msg i:hover {
+    transform: rotate(20deg);
+}
+
+.msg.success {
+    background-color: #15CDA8;
+}
+
+.msg.error {
+    background-color: tomato;
+}
+
+.show-msg {
+    display: inline-block !important;
+}
+
+.no-data {
+    position: absolute;
+    left: 40%;
+    top: 30%;
+    transform: translate(-50px, -50px);
+    width: 300px;
+}
+.no-data img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.no-data p {
+    background-color: rgba(30, 143, 255, 0.164);
+    color: var(--text-color);
+    padding: 10px ;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding:  20px;
+    background-color: white;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.navbar a,
+.navbar .author-name {
+    padding: 5px 10px;
+    margin: 0 10px;
+    text-decoration: none; 
+    transition: color 0.3s ease;
+}
+.navbar-left a {
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 18px;
+    color: var(--black-color);
+    transition: .3s;
+}
+.navbar-left a:hover, 
+.navbar-left a.active {
+    color: var(--text-color);
+}
+
+.navbar-left .logout-button {
+    color: rgb(158, 25, 25); 
+    background-color: transparent; 
+}
+
+.navbar-left .logout-button:hover {
+    color: darkred; 
+}
+
+.navbar-right .author-name {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+.navbar-left .logout-button {
+    color: rgb(158, 25, 25); 
+    background-color: transparent; 
+    padding: 5px 10px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar-left .logout-button:hover {
+    color: darkred; 
+}
+
+
+
+/* this style login and signup */ 
+.auth-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0; margin: 0;
+}
+
+.input-error {
+    color: crimson !important;
+}
+
+.login-content {
+    background-image: url('https://img.freepik.com/free-vector/sound-wave-black-digital-background-entertainment-technology_53876-116186.jpg?w=826&t=st=1706799704~exp=1706800304~hmac=fc6deb643ff241eff1c85d44aaf72d6260b859a9f2d9d17c124527e6e3b9ce16');
+    background-size: cover;
+    background-position: center;
+    height: 82vh; 
+    position:relative ;
+}
+.login-content::after {
+    content: '';
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+}
+.login-form {
+    width: 700px;
+    margin: 0px auto;
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 2;
+    position: relative;
+}
+
+
+.login-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-container {
+    margin-bottom: 15px;
+    margin-right: 10px;
+}
+
+.input-container label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+
+.login-form input[type="submit"] {
+    width: 200px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--text-color);
+    color: white;
+    font-size: 1rem;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: .3s;
+    margin-bottom: 10px;
+}
+
+.login-form input[type="submit"]:hover {
+    background-color: rgb(8, 109, 210);
+}
+
+.login-form a:hover {
+    text-decoration: underline;
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-container {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.input-container:last-child {
+    margin-right: 0;
+}
+
+
+.login-form input:focus {
+    outline-color: var(--text-color);
+}
+
+.login-form p a {
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.login-content .msg {
+    top: 50px;
+}
+
+/* this style profile.php */ 
+
+
+.profile-container {
+    width: 60%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile-container h1 {
+    text-align: center;
+    color: #265fad;
+}
+
+.user-info {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.user-detail:not(:last-of-type) {
+    margin-bottom: 20px;
+    padding: 8px;
+    border-bottom: #ddd 1px solid;
+}
+
+.user-detail strong {
+    color: #333;
+}
+
+.userEmail{
+    text-align: left;
+}
+
+.profile-container .button {
+    padding: 10px 20px;
+    background-color: var(--text-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.profile-container .button:hover {
+    background-color: darkblue;
+}
+
+
+.login-form a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+/* this style logout.php */
+
+.logout-message-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #e9ecef;
+    font-family: 'Rubik', sans-serif;
+}
+
+.logout-message-container h1 {
+    color: #265fad;
+    margin-bottom: 20px;
+}
+
+.logout-message-container p {
+    color: #333;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+
+/* Start Texts */
+
+.texts .boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 20px;
+    padding-top: 30px;
+    padding-bottom: 60px;
+}
+.texts .boxes .box {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #ddd;
+    transition: .3s;
+}
+.texts .boxes .box:hover {
+    transform: scale(0.99);
+    background-color: #fafafa;
+}
+.texts .boxes .box > h3 {
+    color: var(--black-color);
+    font-weight: bold;
+    margin: 10px 0 ;
+}
+.texts .boxes .box div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.texts .boxes .box img {
+    width: 100px;
+    height: 100px;
+    max-width: 100%;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+.texts .boxes .box div p {
+    color: #777;
+    line-height: 1.2;
+}
+
+/* Recording Section  */
+.recording-sec {
+    padding: 20px 0;
+    background-color: #eee;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.mic-toggle {
+    position: relative ;
+    display: block;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    background-color: crimson;
+    margin-bottom: 4rem;
+    cursor: pointer;
+   
+}
+
+.mic-toggle::after, 
+.mic-toggle::before {
+    --pad: 0rem;
+    content: '';
+    display: block;
+    z-index: 0;
+    background-color: rgba(220, 20, 60, 0.2);
+    position: absolute;
+    left: var(--pad);
+    top: var(--pad);
+    bottom: var(--pad);
+    right: var(--pad);
+    border-radius: 50%;
+}
+.mic-toggle::after {
+    transition: 0.4s;
+}
+.mic-toggle::before {
+    transition: 0.2s;
+}
+.mic-toggle:hover:before {
+    --pad: -1rem;
+    padding: 1rem;
+}
+
+.mic-toggle:hover:after {
+    --pad: -2rem;
+    padding: 2rem;
+}
+
+.mic-toggle i {
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-size: 6rem;
+}
+
+.mic-toggle.is_recording:after {
+    animation: smoothPadAfter 0.6s ease-in alternate-reverse forwards infinite;
+}
+.mic-toggle.is_recording:before {
+    animation: smoothPadBefore 0.6s ease-in alternate-reverse forwards infinite;
+}
+
+@keyframes smoothPadAfter {
+    0% {
+        top: -2rem;
+        bottom: -2rem;
+        left: -2rem;
+        right: -2rem;
+    }
+
+    100% {
+        top: -1rem;
+        bottom: -1rem;
+        left: -1rem;
+        right: -1rem;
+    }
+}
+
+@keyframes smoothPadBefore {
+    0% {
+        top: -1rem;
+        bottom: -1rem;
+        left: -1rem;
+        right: -1rem;
+    }
+
+    100% {
+        top: -0.5rem;
+        bottom: -0.5rem;
+        left: -0.5rem;
+        right: -0.5rem;
+    }
+}
+
+.playback {
+    margin-bottom: 20px ;
+    box-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.2);
+    border-radius: 999px;
+    
+}
+.is-hidden {
+    display: none;
+}
+
+
+.recording-sec form {
+    text-align: center;
+    display: none;
+}
+.recording-sec form > input, 
+.recording-sec form .delete-record {
+    width: 100px;
+    padding: 5px 10px;
+    border: none;
+    margin: 10px auto;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    transition: .3s;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+    user-select: none;
+}
+.recording-sec form .delete-record {
+    background-color: crimson;
+}
+.recording-sec form .delete-record:hover {
+    background-color: rgb(220, 0, 0);
+}
+.recording-sec form > input {
+    background-color: var(--text-color);
+}
+.recording-sec form > input:hover {
+    background-color: rgb(0, 117, 234);
+}
+.recording-sec form div {
+    margin-top: 20px;
+}
+.recording-sec form div input {
+    vertical-align: top;
+    cursor: pointer;
+    text-align: center;
+}
+.recording-sec form label {
+    display: inline-block;
+    width: 500px;
+    font-size: 14px;
+    cursor: pointer;
+    line-height: 1.5;
+    text-align: right;
+    user-select: none;
+    max-width: 100%;
+}
+/* End Texts */
+
+/* Start My participations  */
+.participations-section {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.participations-section > h3 {
+    text-align: center !important;
+    width: 100%;
+}
+
+.participations-section > h3::after {
+    display: none;
+}
+.participations-section .showNotes {
+    text-align: right;
+    margin: 30px 0;
+    padding: 10px;
+    background-color: rgba(30, 143, 255, 0.126);
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    color: var(--black-color);
+}
+
+.participations-section .showNotes h3 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.participations-section .showNotes p {
+    display: inline-block;
+}
+
+.participations-section .showNotes i {
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+/* End My participations */
+
+.participations-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+    
+}
+
+.participations-table th, .participations-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    padding: 10px;
+}
+
+.participations-table th {
+    background-color: var(--text-color);
+    color: white;
+}
+
+.participations-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+/* End My participations  */

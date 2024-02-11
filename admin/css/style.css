@@ -1,0 +1,563 @@
+:root {
+    --text-color: dodgerblue;
+    --back-color: #fafafa;
+    --black-color: #333;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: var(--back-color);
+    direction: rtl;
+}
+
+a {
+    text-decoration: none;
+}
+.msg {
+    padding: 15px;
+    border-radius: 5px;
+    padding-left: 10px;
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    color: #eee;
+    min-width: 200px;
+    z-index: 10000;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+.msg i {
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 20px;
+    transition: .3s;
+
+}
+.msg i:hover {
+    transform: rotate(20deg);
+}
+
+.msg.success {
+    background-color: #15CDA8;
+}
+
+.msg.error {
+    background-color: tomato;
+}
+
+.no-data {
+    position: absolute;
+    left: 40%;
+    top: 30%;
+    transform: translate(-50px, -50px);
+    width: 300px;
+}
+.no-data img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.no-data p {
+    background-color: rgba(30, 143, 255, 0.164);
+    color: var(--text-color);
+    padding: 10px ;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+/* Start main page  */
+header {
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 10px #eee;
+}
+header .logo {
+    font-size: 30px;
+    color: var(--text-color);
+    font-weight: normal;
+}
+header ul {
+    list-style: none;
+    display: flex;
+}
+header ul li a {
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 18px;
+    color: var(--black-color);
+    transition: .3s;
+}
+header ul li a:hover, 
+header ul li a.active {
+    color: var(--text-color);
+}
+header ul li a.logout-btn {
+    color: tomato;
+}
+
+header ul li a.logout-btn:hover {
+    color: rgb(205, 48, 20);
+}
+
+.main-content {
+    padding: 70px 40px;
+}
+.main-title {
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+    position: relative;
+    width: fit-content;
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+.main-title::after {
+    content: '';
+    width: 60%;
+    height: 2px;
+    background-color: var(--text-color);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.main-content .statics {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+.main-content .statics a {
+    border-radius: 10px;
+    padding: 15px;
+    margin-right: 20px;
+    width: 40%;
+    text-align: center;
+    color: white;
+    box-shadow: 5px 5px 20px #cbcbcb;
+    text-decoration: none;
+    transition: .3s;
+}
+.main-content .statics a:hover {
+    transform: scale(0.99);
+}
+.main-content .statics a:first-of-type {
+    background-image: linear-gradient(to right, #0066ff, #0088ff, #00a3ff, #00b9f9, #12cceb);    color: var(--back-color);
+}
+.main-content .statics a:last-of-type {
+    background-image: linear-gradient(to right, #ff0000, #ff0032, #ff0052, #f9006e, #eb1287);
+}
+.main-content .statics a h3 {
+    font-size: 50px;
+    margin: 15px 0;
+}
+.main-content .statics a p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.last-shares {
+    padding: 120px 0;
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.cards .card {
+    box-shadow: 5px 5px 10px #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    color: var(--black-color);
+    transition: .3s;
+}
+.cards .card:hover {
+    transform: scale(0.99);
+}
+.cards .card img {
+    width: 100%;
+    max-width: 100%;
+}
+.cards .card .card-body {
+    padding: 10px 20px 0;
+}
+.cards .card .card-body h2 {
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+.cards .card .card-body p {
+    margin-bottom: 10px;
+}
+.cards .card .card-body p span {
+    font-weight: bold;
+    
+}
+.cards .card .card-body p.content {
+    line-height: 1.5;
+    color: #777;
+}
+/* End main page  */
+/* Start Participations  */
+ table {
+    padding: 10px;
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 5px 5px 10px #ddd;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: #eee;
+}
+ table td, th {
+  text-align: right;
+  padding: 10px;
+}
+ table td {
+    border: 1px solid #ddd;
+
+}
+ table th {
+    background-color: #6499E9;
+    color: white;
+}
+
+.user-participations {
+    margin: 60px 0;
+}
+.user-participations tr td {
+    vertical-align: middle;
+    padding: 10px;
+}
+.user-participations .notes-col {
+    width: 200px;
+}
+.no-participations {
+    background-color: rgba(30, 143, 255, 0.226);
+    color: dodgerblue;
+    margin-top: 40px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    width: 500px;
+}
+
+/* End Participations  */
+
+/* Start Texts */
+
+.texts .boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 20px;
+    padding-top: 30px;
+    padding-bottom: 60px;
+}
+.texts .boxes .box {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #ddd;
+    transition: .3s;
+}
+.texts .boxes .box:hover {
+    transform: scale(0.99);
+    background-color: #fafafa;
+}
+.texts .boxes .box > h3 {
+    color: var(--black-color);
+    font-weight: bold;
+    margin: 10px 0 ;
+}
+.texts .boxes .box div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.texts .boxes .box img {
+    width: 100px;
+    height: 100px;
+    max-width: 100%;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+.texts .boxes .box div p {
+    color: #777;
+    line-height: 1.2;
+}
+.texts .add-text-btn {
+    background-color: var(--text-color);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px var(--text-color);
+    width: fit-content;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    transition: .3s;
+}
+.texts .add-text-btn:hover {
+    transform: scale(1.1);
+    background-color: rgb(0, 112, 225);
+}
+
+/* Add Text Design */
+.add-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.add-form form {
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    width: 500px;
+}
+.add-form form h3 {
+    font-size: 25px;
+    color: var(--text-color);
+    margin: 20px 0;
+    text-align: center;
+}
+.add-form form label {
+    display: block;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.add-form form input:not([type="submit"]), 
+.add-form form select,
+.add-form form textarea {
+    margin-bottom: 20px;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 18px;
+}
+.add-form form textarea {
+    height: 200px;
+    font-size: 16px;
+}
+.add-form form input:focus, 
+.add-form form select:focus,
+.add-form form textarea:focus {
+    outline: 2px solid var(--text-color);
+}
+.add-form form input[type="submit"] {
+    background-color: var(--text-color);
+    color: white;
+    border: none;
+    padding: 5px 0 ;
+    width: 150px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: .3s;
+}
+.add-form form input[type="submit"]:hover {
+    background-color: rgb(3, 118, 233);
+}
+
+/* Text panel Design */
+.text-panel > hr {
+    margin: 20px 0;
+} 
+.text-panel .text-tool {
+    display: flex;
+    align-items: center;
+    border: none;
+}
+.text-panel tr {
+    vertical-align: baseline;
+}
+.text-panel .text-content {
+    width: 500px;
+    line-height: 1.5;
+}
+.text-panel .text-status button, 
+.text-panel .edit-text {
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: .3s;
+}
+.text-panel .text-status:first-of-type button {
+    background-color: var(--text-color);
+}
+.text-panel .text-status:first-of-type button:hover {
+    background-color: rgb(9, 122, 236);
+}
+
+.text-panel .text-status:nth-child(2)  button{
+    background-color: tomato;
+}
+.text-panel .text-status:nth-child(2) button:hover {
+    background-color: rgb(197, 43, 16);
+}
+
+.text-panel .edit-text {
+    background-color: #37B5B6;
+}
+.text-panel .edit-text:hover {
+    background-color: #0f8383;
+}
+
+
+/* Add Rating And Notes  */
+
+.notes-form {
+    width: 700px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+.notes-form h3 {
+    font-size: 30px;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+.notes-form .rating {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.notes-form .rating label {
+    color: var(--text-color);
+    font-size: 20px;
+    display: block;
+}
+
+.notes-form .rating input {
+    padding: 8px 10px;
+    width: 50%;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 2px solid #777;
+    outline: none;
+    margin-top: 10px;
+    user-select: none;
+    margin-bottom: 10px;
+}
+.notes-form .notes {
+    gap: 20px;
+}
+.notes-form .notes label {
+    margin-right: 20px;
+}
+.notes-form .notes input {
+    margin-bottom: 10px;
+}
+
+.notes-form form > input {
+    border-radius: 5px;
+    background-color: var(--text-color);
+    border: none;
+    width: 100px;
+    border: none;
+    padding: 8px 0;
+    font-size: 18px;
+    margin-top: 20px;
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.notes-form form > input:hover {
+    background-color: rgb(0, 113, 226);
+}
+/* End Texts */
+/* Start Login  */
+
+.login-content {
+    background-image: url('https://img.freepik.com/free-vector/sound-wave-black-digital-background-entertainment-technology_53876-116186.jpg?w=826&t=st=1706799704~exp=1706800304~hmac=fc6deb643ff241eff1c85d44aaf72d6260b859a9f2d9d17c124527e6e3b9ce16');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; 
+    position:relative ;
+}
+.login-content::after {
+    content: '';
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+}
+.login-form {
+    width: 500px;
+    margin: 80px auto;
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 2;
+    position: relative;
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-container {
+    margin-bottom: 15px;
+}
+
+.input-container label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+
+.login-form input[type="submit"] {
+    width: 200px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--text-color);
+    color: white;
+    font-size: 1rem;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: .3s;
+    margin-bottom: 10px;
+}
+
+.login-form input[type="submit"]:hover {
+    background-color: rgb(8, 109, 210);
+}
+
+
+.login-form input:focus {
+    outline-color: var(--text-color);
+}
+.login-content .msg {
+    top: 50px;
+}
+/* End Login  */
+
